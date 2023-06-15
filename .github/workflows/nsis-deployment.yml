@@ -1,7 +1,8 @@
 name: Distribute to Windows (NSIS)
 
-contents: write
-
+permissions:
+  contents: write
+  actions: write
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
