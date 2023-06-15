@@ -20,14 +20,10 @@ jobs:
       uses: microsoft/setup-msbuild@v1.1
       with:
         vsversion: '15.2'
-<<<<<<< HEAD
         vswhere-path: "C:\Program Files\Microsoft Visual Studio\2022\Enterprise"
     
     - name: Specify Visual Studio build directory
-      run: |
-        npm config set msbuild_path "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe"
-=======
->>>>>>> df28118b00a5941ae52bcab50b9b1800360d0fbf
+      run: npm config set msbuild_path "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe"
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
