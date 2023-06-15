@@ -17,12 +17,10 @@ jobs:
     steps:
     
     - uses: actions/checkout@v2
-    - name: Install Chocolatey
-      run: |
-        Set-ExecutionPolicy Bypass -Scope Process -Force; `
-        iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-    - name: Install MSBuild
-      run: choco install msbuild -y
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.1
+      with:
+        vs-version: '16.5'
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
