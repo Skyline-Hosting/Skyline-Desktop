@@ -10,6 +10,7 @@
     "postinstall": "electron-builder install-app-deps"
   },
   "author": "SkylineHosting",
+  "repository": "https://github.com/Skyline-Hosting/Skyline-Desktop",
   "license": "MIT",
   "dependencies": {
     "electron-log": "^4.3.5",
