@@ -36,7 +36,7 @@
         "owner": "Skyline-Hosting",
         "repo": "Skyline-Desktop",
         "releaseType": "release",
-        "publish": "onTag",
+        "publish": "always",
         "private": true
       }
     ],
