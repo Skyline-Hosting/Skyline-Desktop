@@ -1,0 +1,41 @@
+@media only screen and (max-width:600px){
+    .nav_area {
+        left: -203px;
+        z-index: 5;
+        background: rgb(11 23 37);
+        transition: 0.3s left;
+    }
+    .nav_area:hover {
+        left: 0px;
+        z-index: 5;
+        transition: 0.3s left;
+    }
+    .nav_area::before {
+        content: "Hover to open";
+        position: fixed;
+        top: 87px;
+        left: -45px;
+        color: white;
+        transform: rotate(90deg);
+        opacity: 0.1;
+        pointer-events: none;
+    }
+    .content {
+        left: 21px !important;
+        width: calc(100% - 21px) !important;
+    }
+    div#client_panel_CC {
+        left: 26px;
+        top: 5px;
+    }
+    .controls, div#client_panel_CC {
+        left: 26px;
+        top: 5px;
+    }
+    div#news-area {
+        grid-template-columns: calc(100% - 30px) !important;
+    }
+    .card p {
+        width: calc(100% - 260px) !important;
+    }
+}

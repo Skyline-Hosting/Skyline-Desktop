@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Skyline Hosting - Game Panel</title>
+    <link rel="stylesheet" href="../../css/new-window.css">
+    <link rel="stylesheet" href="../../fonts/fontawesome-free-5.15.2-web/css/all.css">
+    <script src="controls.js"></script>
+    <script src="panel.js"></script>
+  </head>
+  <body>
+    <div id="controls" style="-webkit-app-region: drag">
+
+      <button id="back" title="Go Back" disabled="true"><i class="fas fa-long-arrow-alt-left"></i></button>
+      <button id="forward" title="Go Forward" disabled="true"><i class="fas fa-long-arrow-alt-right"></i></button>
+      <button id="home" title="Go Home"><i class="fas fa-home"></i></button>
+      <button id="reload" title="Reload"><i class="fas fa-redo-alt"></i></button>
+
+      <form id="location-form">
+        <div id="center-column">
+          <input id="location" type="text" value="https://panel.skylinehosting.org/">
+        </div>
+      </form>
+    </div>
+
+    <webview src="https://panel.skylinehosting.org/" style="width:640px; height:480px"></webview>
+  </body>
+</html>

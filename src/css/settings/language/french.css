@@ -1,0 +1,136 @@
+/* Content */
+t2p#page-news::before {content: "Des nouvelles";}
+t2p#page-client_panel::before {content: "Panneau Client";}
+t2p#page-game_panel::before {content: "Panneau de jeu";}
+t2p#page-phpmyadmin::before {content: "phpMyAdmin";}
+t2p#page-support::before {content: "Support";}
+t2p#page-help_center::before {content: "Centre d'aide";}
+t2p#page-settings::before {content: "Paramètres";}
+
+t2p#notify-internet-lost::before {content: "Connection Lost";}
+t2p#notify-internet-restored::before {content: "Connection Restored";}
+
+t2p#h1-settings::before {content: "Paramètres";}
+t2p#h2-app::before {content: "Application";}
+t2p#fs-language::before {content: "Langue";}
+t2p#fs-devMode::before {content: "Mode développeur";}
+t2p#fs-appearance::before {content: "Les apparences";}
+tp2#fs-ac::before {content: "Couleur d'accent";}
+tp2#fs-oo::before {content: "Autres options";}
+tp2#fs-adv::before {content: "Avance";}
+tp2#fs-reset::before {content: "Réinitialiser";}
+t2p#tog-devMode::before {content: "Activer le mode développeur";}
+t2p#tog-rc::before {content: "Coins arrondis";}
+t2p#tog-ts::before {content: "Transparence de la barre latérale";}
+
+t2p#gp_unl-h1::before {content: "Panneau de jeu";}
+tp2#gp_unl-p::before {content: "Le panneau de jeu est déchargé par défaut dans Falix Software pour réduire la quantité de ressources utilisées. Cela aide à la performance.";}
+tp2#gp_unl-button::before {content: "Panneau de charge";}
+
+/* Front-End, show that the option for the language was selected in the settings */
+span#lang_sel_do_en::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+button#lang_sel_do_tr {
+    background: transparent;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px transparent solid;
+}
+span#lang_sel_do_es::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_fr::before {
+    content: "";
+    position: absolute;
+    background: var(--accent);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_cn::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_hn::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_gm::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_ab::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_be::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_ru::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_pt::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_lv::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}

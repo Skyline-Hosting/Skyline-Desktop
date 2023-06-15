@@ -1,0 +1,34 @@
+.page-header, .page-prefooter {
+    display: none !important;
+}
+.note.note-success.note-bordered {
+    display: none !important;
+}
+div#twitterport_md {
+    display: none !important;
+}
+.col-lg-4.col-md-6.col-sm-6.col-xs-12.searchcol {
+    display: none !important;
+}
+.col-lg-4.col-md-6.col-sm-6.col-xs-12.overalluptime {
+    display: none !important;
+}
+.col-lg-4.col-md-12.col-sm-12.col-xs-12.dbbtns.dbbtnstop, .col-lg-4.col-md-12.col-sm-12.col-xs-12.dbbtns {
+    display: none !important;
+}
+
+.portlet.light, #bulkreportcontainer #datatable_products {
+    background-color: transparent !important;
+    color: white !important;
+}
+#bulkreportcontainer table .heading, #bulkreportcontainer .table-bordered>tbody>th {
+    display: none !important;
+}
+.table-bordered {
+    border: none!important;
+}
+#bulkreportcontainer .table-bordered>tbody>tr>td, #bulkreportcontainer .table-bordered>tbody>tr>th, #bulkreportcontainer .table-bordered>tfoot>tr>td, #bulkreportcontainer .table-bordered>tfoot>tr>th, #bulkreportcontainer .table-bordered>thead>tr>td, #bulkreportcontainer .table-bordered>thead>tr>th {
+    border: none!important;
+    border-bottom: none !important;
+}
+

@@ -1,0 +1,17 @@
+<div class="topNav">
+  <button class="nav-page" onclick="openPage('news', this, 'var(--accent)')" id="default_selection"></button>
+  <button class="nav-page" onclick="openPage('client_panel', this, 'var(--accent)')" id="nav_to_clientPanel"><i class="fas fa-id-card"></i> <t2p id="page-client_panel"></t2p></button>
+  <button class="nav-page" onclick="openPage('game_panel', this, 'var(--accent)')" id="nav_to_gamePanel"><i class="fas fa-server"></i> <t2p id="page-game_panel"></t2p></button>
+  <button class="nav-page" onclick="openPage('phpmyadmin', this, 'var(--accent)')" id="nav_to_phpmyadmin"><i class="fas fa-server"></i> <t2p id="page-phpmyadmin"></t2p></button>
+</div>
+<div class="bottomNav">
+  <div class="notifyArea">
+    <div include-html=""></div>
+    <button style="display: none; padding: 10px 30px 10px 45px; background: rgb(37, 37, 37);" id="nd_openInBrowser"><div id="br" style="position: inherit; transform: scale(0.2); width: inherit; height: inherit; margin: 0px 0px 0px -103px;" class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div> <t2p id="nd-Opening-in-brower"></t2p></button>
+    <button id="nd_offline"><t2p id="netork_connection-lost"></t2p></button>
+    <button id="nd_online"><t2p id="netork_connection-restored"></t2p></button>
+  </div>
+  <button class="nav-page" onclick="openPage('support', this, 'var(--accent)')" id="nav_to_support"><i class="fas fa-headset"></i> <t2p id="page-support"></t2p></button>
+  <button class="nav-page" onclick="openPage('settings', this, 'var(--accent)')" id="nav_to_settings"><i class="fas fa-sliders-h"></i> <t2p id="page-settings"></t2p></button>
+</div>
+<div id="ifSidebar_sw"><span id="grab_sw"></span></div>

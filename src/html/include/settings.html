@@ -1,0 +1,199 @@
+<div class="st-tabs">
+    <button class="st-nav-page" onclick="openStPage('st-id-uptime', this, 'var(--accent)')"><i class="fas fa-business-time"></i> Uptime (disabled)</button>
+    <button class="st-nav-page" onclick="openStPage('st-id-account', this, 'var(--accent)')" style="margin-bottom: 20px;"><i class="fas fa-user-circle"></i> Account</button>
+    <span id="divider"></span>
+    <button class="st-nav-page" onclick="openStPage('st-id-about', this, 'var(--accent)')" id="st-sc-default_selection"><i class="fas fa-info-circle"></i> About</button>
+    <!-- <button class="st-nav-page" onclick="openStPage('st-id-account', this, 'var(--accent)')">Account</button> -->
+    <button class="st-nav-page" onclick="openStPage('st-id-language', this, 'var(--accent)')"><i class="fas fa-language"></i> Language</button>
+    <!-- <button class="st-nav-page" onclick="openStPage('st-id-active_tab', this, 'var(--accent)')"><i class="fas fa-columns"></i> Active Tabs</button> -->
+    <button class="st-nav-page" onclick="openStPage('st-id-appearance', this, 'var(--accent)')"><i class="fas fa-swatchbook"></i> Appearance</button>
+    <button class="st-nav-page" onclick="openStPage('st-id-advance', this, 'var(--accent)')"><i class="fas fa-toolbox"></i> Advanced</button>
+</div>
+
+<div class="st-tab-content">
+    <div id="st-id-about" class="st-tab">
+        <h1>Skyline Desktop</h1>
+        <p>Version: 1.0.0</p>
+        <p>Package Version: <span id="version"></span></p>
+        <!-- <h2>License</h2>
+        <div class="scrollable-ta">
+            <div include-html="./html/include/license.html"></div>
+        </div> -->
+        <div id="techincal-details">
+            <h2>Techincal Details</h2>
+            <h3>Versions</h3>
+            <p>Electron Version: <span id="electron-version"></span></p>
+            <p>Node Version: <span id="node-version"></span></p>
+            <p>Chromium Version: <span id="chrome-version"></span></p>
+            <!-- <p>Generic Update Server: https://updates.korbsstudio.com</p>
+            <p>Protocols: falix://falix</p> -->
+            <h3>Dependencies</h3>
+            <div class="fa-pa">
+                <div class="fa-card">
+                    <p>Electron</p>
+                    <p id="dsec">The Electron framework lets you write cross-platform desktop applications using JavaScript, HTML and CSS. It is based on Node.js and Chromium and is used by the Atom editor and many other apps.</p>
+                    <div style="text-align: right;">
+                        <p id="version">v<span id="electron-p-version"></span></p>
+                        <button id="btn" onclick="const { shell } = require('electron'); shell.openExternal('https://www.npmjs.com/package/electron');">View</button>
+                    </div>
+                </div>
+                <div class="fa-card">
+                    <p>Glasstron</p>
+                    <p id="dsec">A simple and reliable API to achieve blur and transparency across platforms (Windows/Linux/MacOS), so you don't have to panic with Electron bugs and messy code! Plus, it's really simple!</p>
+                    <div style="text-align: right;">
+                        <p id="version">v0.0.7</p>
+                        <button id="btn" onclick="const { shell } = require('electron'); shell.openExternal('https://www.npmjs.com/package/glasstron');">View</button>
+                    </div>
+                </div>
+                <div class="fa-card">
+                    <p>Electron Updater</p>
+                    <p id="dsec">This module allows you to automatically update your application. You only need to install this module and write two lines of code! To publish your updates you just need simple file hosting, it does not require a dedicated server.</p>
+                    <div style="text-align: right;">
+                        <p id="version">v4.3.9</p>
+                        <button id="btn" onclick="const { shell } = require('electron'); shell.openExternal('https://www.npmjs.com/package/electron-updater');">View</button>
+                    </div>
+                </div>
+                <div class="fa-card">
+                    <p>Electron Builder</p>
+                    <p id="dsec">A complete solution to package and build a ready for distribution Electron, Proton Native app for macOS, Windows and Linux with “auto update” support out of the box.</p>
+                    <div style="text-align: right;">
+                        <p id="version">v22.10.4</p>
+                        <button id="btn" onclick="const { shell } = require('electron'); shell.openExternal('https://www.npmjs.com/package/electron-builder');">View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <h2>Debug Information</h2>
+        <p>Package Version: v4.50.5</p>
+        <p>Node Version: </p>
+        <p>Update Server:</p> -->
+    </div>
+    <div id="st-id-language" class="st-tab">
+        <div class="setting-fs">
+            <h3><t2p id="fs-language"></t2p></h3>
+            <div class="settings-slec">
+                <div class="lang-se" onclick="setLanguage('./css/settings/language/english.css');">
+                    <span id="lang_sel_do_en"></span>
+                    <p>English</p>
+                </div>
+                <div class="lang-se" onclick="setLanguage('./css/settings/language/spanish.css');">
+                    <span id="lang_sel_do_es"></span>
+                    <p>Spanish</p>
+                </div>
+                <div class="lang-se" onclick="setLanguage('./css/settings/language/french.css');">
+                    <span id="lang_sel_do_fr"></span>
+                    <p>French</p>
+                </div>
+                <div class="lang-se" onclick="setLanguage('./css/settings/language/chinese.css');">
+                    <span id="lang_sel_do_cn"></span>
+                    <p>Chinese</p>
+                </div>
+                <div class="lang-se" onclick="setLanguage('./css/settings/language/hindi.css');">
+                    <span id="lang_sel_do_hn"></span>
+                    <p>Hindi</p>
+                </div>
+                <div class="lang-se" onclick="setLanguage('./css/settings/language/german.css');">
+                    <span id="lang_sel_do_gm"></span>
+                    <p>German</p>
+                </div>
+                <!-- <div class="lang-se" onclick="setLanguage('./css/settings/language/arabic.css'); navigateTo('https://desktop.falixnodes.net/blank/');">
+                    <span id="lang_sel_do_ab"></span>
+                    <p>Arabic</p>
+                </div> -->
+                <div class="lang-se" onclick="setLanguage('./css/settings/language/bengali.css');">
+                    <span id="lang_sel_do_be"></span>
+                    <p>Bengali</p>
+                </div>
+                <div class="lang-se" onclick="setLanguage('./css/settings/language/russian.css');">
+                    <span id="lang_sel_do_ru"></span>
+                    <p>Russian</p>
+                </div>
+                <div class="lang-se" onclick="setLanguage('./css/settings/language/portuguese.css');">
+                    <span id="lang_sel_do_pt"></span>
+                    <p>Portuguese</p>
+                </div>
+                <div class="lang-se" onclick="setLanguage('./css/settings/language/latvian.css');">
+                    <span id="lang_sel_do_lv"></span>
+                    <p>Latvian</p>
+                </div>
+                <div class="lang-se" onclick="setLanguage('./css/settings/language/turkish.css');">
+                    <span id="lang_sel_do_tr"></span>
+                    <p>Turkish</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="st-id-profile" class="st-tab">
+        <webview id="profile-settings" src="https://client.falixnodes.net/profile/settings"></webview>
+    </div> -->
+    <div id="st-id-appearance" class="st-tab">
+            <div class="setting-fs">
+                <h3><tp2 id="fs-ac"></tp2></h3>
+                <div class="button-row-fs">
+                    <button id="default" title="Default" onclick="swapAccentColor('./css/settings/accent-color/default.css')"><t2p id="ac-default"></t2p></button>
+                    <button id="purple" title="Purple" onclick="swapAccentColor('./css/settings/accent-color/purple.css')"><t2p id="ac-purple"></t2p></button>
+                    <button id="red" title="Red" onclick="swapAccentColor('./css/settings/accent-color/red.css')"><t2p id="ac-red"></t2p></button>
+                    <button id="green" title="Green" onclick="swapAccentColor('./css/settings/accent-color/green.css')"><t2p id="ac-green"></t2p></button>
+                    <button id="gray" title="Gray" onclick="swapAccentColor('./css/settings/accent-color/gray.css')"><t2p id="ac-gray"></t2p></button>
+                </div>
+            </div>
+            <div class="setting-fs">
+                <h3><tp2 id="fs-oo"></tp2></h3>
+                <div class="toggle-fs">
+                    <span title="Meant for Windows 11" onclick="swapRoundedCorners('./css/settings/rounded-corners/off.css')" id="rc-toggle-play_off"></span>
+                    <span title="Meant for Windows 11" onclick="swapRoundedCorners('./css/settings/rounded-corners/on.css')" id="rc-toggle-play_on"></span>
+
+                    <p><t2p id="tog-rc"></t2p></p>
+
+                    <span id="toggle-rc-cm"></span>
+                </div>
+                <div style="opacity: 0.3; pointer-events: none;" class="toggle-fs">
+
+                    <span onclick="swapSidebarOpacity('./css/settings/sidebar-opacity/full.css')" id="ts-toggle-play_off"></span>
+                    <span onclick="swapSidebarOpacity('./css/settings/sidebar-opacity/90.css')" id="ts-toggle-play_on"></span>
+
+                    <p><t2p id="tog-ts"></t2p></p>
+
+                    <span id="toggle-ts-cm"></span>
+                </div>
+            </div>
+        </div>
+        <div id="st-id-advance" class="st-tab">
+            <div class="setting-fs">
+                <div class="toggle-fs">
+                    <span title="Access developer tool for Client and Game Panel. More techincal information is displayed in the About section in Settings." onclick="developerMode('./css/settings/developer-mode/off.css')" id="dm-toggle-play_off"></span>
+                    <span title="Access developer tool for Client and Game Panel. More techincal information is displayed in the About section in Settings." onclick="developerMode('./css/settings/developer-mode/on.css')" id="dm-toggle-play_on"></span>
+            
+                    <p><t2p id="tog-devMode"></t2p></p>
+            
+                    <span id="toggle-dm-cm"></span>
+                </div>
+            </div>        
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div> WORK IN PROGRESS
+    <h3><tp2 id="fs-adv"></tp2></h3>
+    <button id="imoo" onclick="reset();"><tp2 id="fs-reset"></tp2></button>
+</div> -->

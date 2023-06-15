@@ -1,0 +1,36 @@
+.nav_area {
+    border-radius: 7px 0px 0px 7px;
+}
+.content {
+    border-radius: 0px 7px 7px 0px;
+}
+
+span#toggle-rc-cm::before {
+    content: "";
+    position: absolute;
+    background: var(--accent);
+    width: 15px;
+    height: 15px;
+    margin: -34px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#rc-toggle-play_off {
+    background: transparent;
+    width: 200px;
+    height: 30px;
+    position: absolute;
+    margin: -7px 0px 0px 0px;
+    z-index: 5;
+    cursor: pointer;
+    display: inherit;
+}
+span#rc-toggle-play_on {
+    background: transparent;
+    width: 200px;
+    height: 30px;
+    position: absolute;
+    margin: -7px 0px 0px 0px;
+    z-index: 5;
+    cursor: pointer;
+    display: none;
+}

@@ -1,0 +1,137 @@
+/* Content */
+t2p#page-news::before {content: "Nachrichten";}
+t2p#page-client_panel::before {content: "Kunden-Panel";}
+t2p#page-game_panel::before {content: "Spielfeld";}
+t2p#page-phpmyadmin::before {content: "phpMyAdmin";}
+t2p#page-support::before {content: "Unterstützen";}
+t2p#page-help_center::before {content: "Hilfezentrum";}
+t2p#page-settings::before {content: "Einstellungen";}
+
+t2p#nd-Opening-in-brower::before {content: "Im Browser öffnen";}
+t2p#netork_connection-lost::before {content: "Verbindung verloren";}
+t2p#netork_connection-restored::before {content: "Verbindung wiederhergestellt";}
+
+t2p#h1-settings::before {content: "Einstellungen";}
+t2p#h2-app::before {content: "Antrag";}
+t2p#fs-language::before {content: "Sprache";}
+t2p#fs-devMode::before {content: "Entwicklermodus";}
+t2p#fs-appearance::before {content: "Auftritte";}
+tp2#fs-ac::before {content: "Akzentfarbe";}
+tp2#fs-oo::before {content: "Andere Optionen";}
+tp2#fs-adv::before {content: "Vorschuss";}
+tp2#fs-reset::before {content: "Zurückgesetzt";}
+t2p#tog-devMode::before {content: "Entwicklermodus aktivieren";}
+t2p#tog-rc::before {content: "Abgerundete Ecken";}
+t2p#tog-ts::before {content: "Transparenz der Seitenleiste ";}
+
+t2p#gp_unl-h1::before {content: "Spielfeld";}
+tp2#gp_unl-p::before {content: "Die Spielkonsole ist standardmäßig in Falix Software entladen verwendet, um die Menge an Ressourcen zu reduzieren. Das hilft bei der Leistung.";}
+tp2#gp_unl-button::before {content: "Panel laden";}
+
+/* Front-End, show that the option for the language was selected in the settings */
+span#lang_sel_do_en::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+button#lang_sel_do_tr {
+    background: transparent;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px transparent solid;
+}
+span#lang_sel_do_es::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_fr::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_cn::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_hn::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_gm::before {
+    content: "";
+    position: absolute;
+    background: var(--accent);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_ab::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_be::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_ru::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_pt::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_lv::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}

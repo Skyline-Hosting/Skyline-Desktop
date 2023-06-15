@@ -1,0 +1,18 @@
+:root {
+    --accent: #fff394;
+}
+
+span#color_selected_yellow {
+    background: #18273A;
+    position: absolute;
+    width: 155px;
+    height: 40px;
+    margin: 0px 0px 0px -159px;
+    border-radius: 50px;
+    z-index: -1;
+}
+
+button#set_layout img {
+    filter: hue-rotate(183deg);
+}
+button#Yellow-sel {background: var(--accent)}

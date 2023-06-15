@@ -1,0 +1,65 @@
+{
+  "name": "skylinehosting",
+  "version": "1.0.0",
+  "description": "Skyline Hosting's Desktop App",
+  "main": "src/js/electron/index.js",
+  "scripts": {
+    "start": "electron --enable-transparent-visuals --disable-gpu .",
+    "build": "electron-builder build",
+    "release": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "author": "SkylineHosting",
+  "license": "MIT",
+  "dependencies": {
+    "electron-log": "^4.3.5",
+    "electron-updater": "^4.3.9",
+    "glasstron": "^0.0.7",
+    "node-static": "^0.7.11"
+  },
+  "devDependencies": {
+    "electron": "^14.0.1",
+    "electron-builder": "^22.11.7",
+    "electron-rebuild": "^3.2.0"
+  },
+  "build": {
+    "protocols": {
+      "name": "skyline",
+      "schemes": [
+        "skyline"
+      ]
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Skyline-Hosting",
+        "repo": "Skyline-Desktop",
+        "releaseType": "release",
+        "private": true
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "asar": "false"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage",
+      "maintainer": "package.skylinehosting.desktopapp",
+      "category": "Network",
+      "vendor": "Skyline Hosting",
+      "description": "Accessing Skyline, all from one place"
+    },
+    "nsis": {
+      "deleteAppDataOnUninstall": true,
+      "shortcutName": "Skyline Hosting",
+      "displayLanguageSelector": true,
+      "oneClick": false,
+      "allowElevation": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    }
+  }
+}

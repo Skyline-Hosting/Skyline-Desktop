@@ -1,0 +1,137 @@
+/* Content */
+t2p#page-news::before {content: "খবর";}
+t2p#page-client_panel::before {content: "ক্লায়েন্ট প্যানেল";}
+t2p#page-game_panel::before {content: "গেম প্যানেল";}
+t2p#page-phpmyadmin::before {content: "phpMyAdmin";}
+t2p#page-support::before {content: "সমর্থন";}
+t2p#page-help_center::before {content: "সাহায্য কেন্দ্র";}
+t2p#page-settings::before {content: "সেটিংস";}
+
+t2p#nd-Opening-in-brower::before {content: "ব্রাউজারে খোলা";}
+t2p#netork_connection-lost::before {content: "সংযোগ বিচ্ছিন্ন";}
+t2p#netork_connection-restored::before {content: "সংযোগ পুনঃস্থাপিত";}
+
+t2p#h1-settings::before {content: "সেটিংস";}
+t2p#h2-app::before {content: "আবেদন";}
+t2p#fs-language::before {content: "ভাষা";}
+t2p#fs-devMode::before {content: "বিকাশকারী মোড";}
+t2p#fs-appearance::before {content: "উপস্থিতি";}
+tp2#fs-ac::before {content: "অ্যাকসেন্ট রঙ";}
+tp2#fs-oo::before {content: "অন্যান্য অপশন";}
+tp2#fs-adv::before {content: "অগ্রিম";}
+tp2#fs-reset::before {content: "রিসেট";}
+t2p#tog-devMode::before {content: "বিকাশকারী মোড সক্ষম করুন";}
+t2p#tog-rc::before {content: "বৃত্তাকার কোণ";}
+t2p#tog-ts::before {content: "সাইডবার স্বচ্ছতা";}
+
+t2p#gp_unl-h1::before {content: "গেম প্যানেল";}
+tp2#gp_unl-p::before {content: "ফ্যালিক্স সফটওয়্যারে গেম প্যানেলটি ডিফল্টরূপে আনলোড করা হয় যাতে ব্যবহৃত সম্পদের পরিমাণ হ্রাস পায়। এটি পারফরম্যান্সে সহায়তা করে।";}
+tp2#gp_unl-button::before {content: "লোড প্যানেল";}
+
+/* Front-End, show that the option for the language was selected in the settings */
+span#lang_sel_do_en::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+button#lang_sel_do_tr {
+    background: transparent;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px transparent solid;
+}
+span#lang_sel_do_es::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_fr::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_cn::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_hn::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_gm::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_ab::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_be::before {
+    content: "";
+    position: absolute;
+    background: var(--accent);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_ru::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_pt::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_lv::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}

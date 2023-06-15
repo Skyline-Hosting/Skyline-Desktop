@@ -1,0 +1,14 @@
+<div id="game_panel-unloaded">
+  <h1>Skyline Desktop</h1>
+  <p>The panel is unloaded for performance reasons, click the "Load Panel" button below to continue. </p>
+  <button onclick="loadGamePanel()"><tp2 id="gp_unl-button"></tp2></button>
+</div>
+<div id="game_panel-loaded">
+  <div class="controls">
+    <button onclick="wvGoBack()"><i class="fas fa-long-arrow-alt-left"></i> <tp2 id="wvC-back"></tp2></button>
+    <button onclick="wvGoForward()"><i class="fas fa-long-arrow-alt-right"></i> <tp2 id="wvC-forward"></tp2></button>
+    <button onclick="loadGamePanel()"><i class="fas fa-home"></i> <tp2 id="wvC-home"></tp2></button>
+    <button id="wvDev" onclick="wvDevTools()"><i class="fas fa-code"></i> <tp2 id="wvC-devTools"></tp2></button>
+    <button onclick="unloadGamePanel()"><i class="fas fa-times"></i> <tp2 id="wvC-unload"></tp2></button></div>
+</div>
+

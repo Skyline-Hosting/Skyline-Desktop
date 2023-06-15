@@ -1,0 +1,393 @@
+:root {
+    --bg-accent-one: #0b1725;
+    --bg-accent-two: #162230;
+}
+
+body {
+    background: transparent;
+    font-family: Poppins;
+}
+html.windows [data-for-os=mac] {display: none !important}
+html.mac [data-for-os=windows] {display: none !important}
+.linux #titlebar {display: none !important}
+html.mac .topNav {margin-top: 40px}
+html.windows .topNav {margin-top: 40px;}
+
+
+*:focus {outline: none;}
+::-webkit-scrollbar {width: 10px;height: 5px;background: #0e1a27;}
+::-webkit-scrollbar-thumb {background: #2970cc;}
+webview#fullSize {height: 100%;width: 100%;display: inline-flex; position: absolute;}
+webview#client_panel_wv {height: 100%;width: 100%;display: inline-flex; position: absolute;}
+webview#support_wv {height: 100%;width: 100%;display: inline-flex; position: absolute;}
+.nav_area {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 224px;
+    height: 100%;
+    background: rgb(11 23 37 / 75%);
+}
+.topNav {
+    position: absolute;
+    display: grid;
+    grid-gap: 10px;
+    margin: 20px;
+}
+.bottomNav {
+    position: absolute;
+    display: grid;
+    grid-gap: 10px;
+    margin: 20px;
+    bottom: 0px;
+    width: 178px;
+}
+
+button#nd_online {
+    background: #33c333;
+    border: none;
+    padding: 10px 30px 10px 25px;
+    text-align: left;
+    border-radius: 5px;
+    display: none;
+}
+button#nd_offline {
+    background: #ff8181;
+    border: none;
+    padding: 10px 30px 10px 25px;
+    text-align: left;
+    border-radius: 5px;
+    display: none;
+}
+
+.nav_area i {margin: 0px 14px 0px -8px;}
+button.nav-page:hover {background: rgb(0 0 0 / 25%);transition: 0.3s background;}
+button.nav-page {
+    color: white;
+    background: transparent;
+    border: none;
+    text-align: left;
+    padding: 10px 30px 10px 25px;
+    border-radius: 5px;
+    transition: 0.3s background;
+    width: 185px;
+}
+
+.content {
+    position: fixed;
+    top: 0px;
+    left: 224px !important;
+    width: calc(100% - 224px) !important;
+    height: 100%;
+    background: var(--bg-accent-two);
+    color: white;
+    overflow-y: auto;
+}
+
+div#settings {margin: 30px;}
+
+.toggle-fs p {margin-left: 30px;}
+
+div#game_panel-loaded {display: none;}
+div#game_panel-unloaded {margin: 25px;}
+.controls button:hover {opacity: 0.4;}
+div#game_panel-unloaded {margin: 25px;width: 400px;}
+div#game_panel-unloaded button {
+    color: white;
+    background: var(--accent);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+webview#game_panel_wv {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.controls {
+    background: var(--accent);
+    position: fixed;
+    z-index: 5;
+    cursor: default;
+    left: 88px;
+    top: 110px;
+    width: fit-content;
+    padding: 5px 7px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 0px;
+}
+div#client_panel_CC {
+    left: 113px;
+    top: 65px;
+    height: 25px;
+}
+.controls button {
+    color: white;
+    border: none;
+    background: transparent;
+    width: 25px;
+    padding: 6px 0px;
+    cursor: pointer;
+}
+
+button#imoo {
+    background: #ff4545;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 4px;
+}
+
+.st-tabs {
+    background: #0b1725bd;
+    position: fixed;
+    top: 0px;
+    left: 223px;
+    width: 250px;
+    height: 100%;
+    padding: 9px 0px 0px 0px;
+}
+.st-tabs button {
+    margin: 12px 20px 0px 20px;
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 10px 30px 10px 25px;
+    width: 210px;
+    text-align: left;
+    border-radius: 5px;
+}
+.st-tab-content {
+    position: absolute;
+    top: 0px;
+    left: 280px;
+}
+.st-tabs button i {margin-right: 10px;}
+
+.scrollable-ta {
+    overflow-y: scroll;
+    height: 300px;
+    background: #0b1725bd;
+    width: calc(100% - 76px);
+    border-radius: 4px;
+    padding: 0px 20px;
+    border: 2px var(--accent) solid;
+}
+
+.fa-card {
+    background: #0e1a27;
+    border-radius: 5px;
+    width: calc(100% - 30px);
+    height: 130px;
+    border: 2px transparent solid;
+    transition: 0.3s border;
+    margin-bottom: 10px;
+}
+.fa-card:hover {
+    border: 2px var(--accent) solid;
+    transition: 0.3s border;
+}
+.fa-card button {
+    position: absolute;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: -30px 0px 0px -78px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+p#version {
+    position: unset;
+    margin: 12px 100px 0px 0px;
+}
+p#dsec {
+    margin-top: 60px;
+    width: calc(100% - 60px);
+    font-size: 14px;
+}
+.fa-card p {
+    position: absolute;
+    margin: 11px 0px 0px 20px;
+}
+
+
+.lds-spinner {
+    color: official;
+    display: inline-block;
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    z-index: 10;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%) scale(0.4);
+    animation: 0.8s fadeIn linear;
+}
+.lds-spinner div {
+  transform-origin: 40px 40px;
+  animation: lds-spinner 1.2s linear infinite;
+}
+.lds-spinner div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 37px;
+  width: 6px;
+  height: 18px;
+  border-radius: 20%;
+  background: #fff;
+}
+.lds-spinner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+.lds-spinner div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+.lds-spinner div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+.lds-spinner div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+.lds-spinner div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+.lds-spinner div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+.lds-spinner div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+.lds-spinner div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+.lds-spinner div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+.lds-spinner div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+.lds-spinner div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+.lds-spinner div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+button#messages {
+  color: white;
+  background: #474747;
+  border: none;
+  text-align: left;
+  padding: 10px 30px 10px 25px;
+  border-radius: 5px;
+  transition: 0.3s background;
+  width: 100%;
+  display: none;
+}       
+t2p#eb-update-ISdownloading, button#messages {padding: 10px 0px 10px 25px;}
+
+div#app-loading {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #19293c;
+  z-index: 1000;
+  color: white;
+  cursor: none;
+}
+div#app-loading p {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  margin: 0px;
+}
+
+.notifyArea button {
+  color: white;
+  background: #238623;
+  border: none;
+  text-align: left;
+  padding: 10px 0px 10px 25px;
+  border-radius: 5px;
+  transition: 0.3s background;
+  width: 185px;
+  margin-bottom: 10px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+span#divider {
+  height: 3px;
+  background: #162230;
+  border-radius: 10px;
+  position: absolute;
+  top: 117px;
+  width: 210px;
+  left: 20px;
+}
+webview#uptime {
+  width: calc(100% - 473px);
+  height: calc(100% - 0px);
+  margin-left: 219px;
+  position: fixed;
+  top: 0px;
+}
+webview#account_wv {
+  width: calc(100% - 473px);
+  height: calc(100% - 0px);
+  margin-left: 219px;
+  position: fixed;
+  top: 0px;
+}
+webview#help_wv {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.settings-slec p {margin-left: 40px;}
+.lang-se {cursor: pointer;}
+
+div#phpmyadmin_CC {
+    top: 155px;
+    height: 25px;
+    left: 116px;
+}
+webview#webviewPHP {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}

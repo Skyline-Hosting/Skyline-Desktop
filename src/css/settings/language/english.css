@@ -1,0 +1,137 @@
+/* Content */
+t2p#page-news::before {content: "News";}
+t2p#page-client_panel::before {content: "Client Panel";}
+t2p#page-game_panel::before {content: "Game Panel";}
+t2p#page-phpmyadmin::before {content: "phpMyAdmin";}
+t2p#page-support::before {content: "Support";}
+t2p#page-help_center::before {content: "Help Center";}
+t2p#page-settings::before {content: "Settings";}
+
+t2p#nd-Opening-in-brower::before {content: "Opening in brower";}
+t2p#netork_connection-lost::before {content: "Connection lost";}
+t2p#netork_connection-restored::before {content: "Connection Restored";}
+
+t2p#h1-settings::before {content: "Settings";}
+t2p#h2-app::before {content: "Application";}
+t2p#fs-language::before {content: "Language";}
+t2p#fs-devMode::before {content: "Developer Mode";}
+t2p#fs-appearance::before {content: "Appearances";}
+tp2#fs-ac::before {content: "Accent Color";}
+tp2#fs-oo::before {content: "Other Options";}
+tp2#fs-adv::before {content: "Advance";}
+tp2#fs-reset::before {content: "Reset";}
+t2p#tog-devMode::before {content: "Enable Developer Mode";}
+t2p#tog-rc::before {content: "Rounded Corners";}
+t2p#tog-ts::before {content: "Sidebar Transparency";}
+
+t2p#gp_unl-h1::before {content: "Game Panel";}
+tp2#gp_unl-p::before {content: "The game panel is unloaded by default in Falix Software to reduce the amount of resources used. This helps with performance.";}
+tp2#gp_unl-button::before {content: "Load Panel";}
+
+/* Front-End, show that the option for the language was selected in the settings */
+span#lang_sel_do_en::before {
+    content: "";
+    position: absolute;
+    background: var(--accent);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+button#lang_sel_do_tr {
+    background: transparent;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px transparent solid;
+}
+span#lang_sel_do_es::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_fr::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_cn::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_hn::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_gm::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_ab::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_be::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_ru::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_pt::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_lv::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}

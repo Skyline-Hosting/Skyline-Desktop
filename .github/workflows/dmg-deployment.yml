@@ -1,0 +1,31 @@
+name: Distribute for macOS (DMG)
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  build-mac:
+
+    runs-on: macOS-10.15
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+    steps:
+    
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+    - run: npm install
+    - run: rm build/license_zh.txt
+    - run: rm build/license_es.txt
+    - run: rm build/license_fr.txt
+    - run: npm run build
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        name: mac-dmg
+        path: dist/

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Skyline Desktop</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="./fonts/fontawesome-free-5.15.2-web/css/all.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/fonts.css">
+        <link rel="stylesheet" href="./css/windows-titlebar.css">
+        <link rel="stylesheet" href="./css/smallWindow.css">
+        
+        <link id="language" rel="stylesheet" href="./css/settings/language/english.css">
+        <link id="accent-setting" rel="stylesheet" type="text/css" href="./css/settings/accent-color/default.css">
+        <link id="rounded-corners-setting" rel="stylesheet" type="text/css" href="./css/settings/rounded-corners/off.css">
+        <link id="developer-mode" rel="stylesheet" type="text/css" href="./css/settings/developer-mode/off.css">
+    </head>
+    <header data-for-os="windows" id="titlebar" class="titlebar draggable" style="-webkit-app-region: undrag">
+        <div>
+            <div id="window-controls">
+            <!-- make a draggable region -->
+
+            <div onclick="window.api.send('minimize')" class="button" id="min-button"><img class="icon" srcset="./images/icons/titlebar/min-w-10.png 1x, ./images/icons/titlebar/min-w-12.png 1.25x, ./images/icons/titlebar/min-w-15.png 1.5x, ./images/icons/titlebar/min-w-15.png 1.75x, ./images/icons/titlebar/min-w-20.png 2x, ./images/icons/titlebar/min-w-20.png 2.25x, ./images/icons/titlebar/min-w-24.png 2.5x, ./images/icons/titlebar/min-w-30.png 3x, ./images/icons/titlebar/min-w-30.png 3.5x" draggable="false" /></div>
+            <div onclick="window.api.send('maximize')" class="button" id="max-button"><img class="icon" srcset="./images/icons/titlebar/max-w-10.png 1x, ./images/icons/titlebar/max-w-12.png 1.25x, ./images/icons/titlebar/max-w-15.png 1.5x, ./images/icons/titlebar/max-w-15.png 1.75x, ./images/icons/titlebar/max-w-20.png 2x, ./images/icons/titlebar/max-w-20.png 2.25x, ./images/icons/titlebar/max-w-24.png 2.5x, ./images/icons/titlebar/max-w-30.png 3x, ./images/icons/titlebar/max-w-30.png 3.5x" draggable="false" /></div>
+            <div onclick="window.api.send('restore')" class="button" id="restore-button"><img class="icon" srcset="./images/icons/titlebar/restore-w-10.png 1x, ./images/icons/titlebar/restore-w-12.png 1.25x, ./images/icons/titlebar/restore-w-15.png 1.5x, ./images/icons/titlebar/restore-w-15.png 1.75x, ./images/icons/titlebar/restore-w-20.png 2x, ./images/icons/titlebar/restore-w-20.png 2.25x, ./images/icons/titlebar/restore-w-24.png 2.5x, ./images/icons/titlebar/restore-w-30.png 3x, ./images/icons/titlebar/restore-w-30.png 3.5x" draggable="false" /></div>
+            <div onclick="window.api.send('close')" class="button" id="close-button"><img class="icon" srcset="./images/icons/titlebar/close-w-10.png 1x, ./images/icons/titlebar/close-w-12.png 1.25x, ./images/icons/titlebar/close-w-15.png 1.5x, ./images/icons/titlebar/close-w-15.png 1.75x, ./images/icons/titlebar/close-w-20.png 2x, ./images/icons/titlebar/close-w-20.png 2.25x, ./images/icons/titlebar/close-w-24.png 2.5x, ./images/icons/titlebar/close-w-30.png 3x, ./images/icons/titlebar/close-w-30.png 3.5x" draggable="false" /></div>
+        </div>
+    </header>
+    <body onload="setTimeout (() => {unloadGamePanel();}, 2500)">
+        <div class="nav_area">
+            <div include-html="./html/include/nav.html"></div>
+        </div>
+        <div class="content">
+            <div id="client_panel" class="page_content">
+                <div include-html="./html/include/client-panel.html"></div>
+                <webview id="client_panel_wv" preload='./js/detection/domain-restriction.js' src="https://dashboard.skylinehosting.org/"></webview>
+            </div>
+            <div id="game_panel" class="page_content">
+                <div include-html="./html/include/game-panel.html"></div>
+                <webview id="game_panel_wv" preload='./js/detection/domain-restriction.js' src="https://panel.skylinehosting.org"></webview>
+            </div>
+            <div id="phpmyadmin" class="page_content">
+                <div include-html="./html/include/phpmyadmin.html"></div>
+                <webview id="webviewPHP" preload='./js/detection/domain-restriction.js' src=""></webview>
+            </div>
+            <div id="support" class="page_content">
+                <webview id="support_wv" preload='./js/detection/domain-restriction.js' src="https://discord.gg/skylinehosting"></webview>
+            </div>
+            <div id="settings" class="page_content">
+                <!-- <div id="st-id-uptime" class="st-tab"> -->
+                    <!-- TODO: ADD UPTIME -->
+                    <!-- <webview id="uptime" preload='./js/detection/domain-restriction.js' src=""></webview>
+                </div> -->
+                <div id="st-id-account" class="st-tab">
+                    <webview id="account_wv" preload='./js/settings/account.js' src="https://dashboard.skylinehosting.org/"></webview>
+                </div>
+                <div include-html="./html/include/settings.html"></div>
+            </div>
+        </div>
+        <script src="./js/require.js"></script>
+        <script src="./js/hotkeys.js"></script>
+        <script src="./js/controls.js"></script>
+        <script src="./js/notifications/dismissal.js"></script>
+        <script src="./js/ui/dim.js"></script>
+        <script src="./js/ui/nav.js"></script>
+        <script src="./js/ui/notify.js"></script>
+        <script src="./js/ui/include.js"></script>
+        <script src="./js/detection/os.js"></script>
+        <script src="./js/settings/language.js"></script>
+        <script src="./js/settings/accent-color.js"></script>
+        <script src="./js/settings/developer-mode.js"></script>
+        <script src="./js/settings/rounded-corners.js"></script>
+        <script>includeHTML();</script>
+        <script>
+            var webview_account = document.getElementById('account_wv');
+            webview_account.addEventListener('dom-ready', function () {
+                webview_account.insertCSS('nav.navbar.navbar-light.navbar-glass.navbar-top.navbar-expand {display: none !important;}.card-body.position-relative {display: none !important;}div#adngin-bottom_leaderboard_client_panel-0 {display: none !important;}')
+            });
+        </script>
+    </body>
+</html>
