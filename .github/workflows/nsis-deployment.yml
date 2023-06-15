@@ -27,7 +27,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - run: npm config set msbuild_path "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe"
+    - run: npm config set msbuild_path "C:\Program Files (x86)\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\MSBuild.exe"
+
+    - run: npm install --global --production windows-build-tools
 
     - run: npm install
     
