@@ -50,7 +50,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: skylinehosting-Setup
-        path: extracted/skylinehosting-Setup-$version.exe
+        path: extracted/skylinehosting-Setup-${{ steps.setup-file.outputs.version }}.exe
 
     # Step 5: Create a release
     - name: Create Release
@@ -72,6 +72,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: extracted/skylinehosting-Setup-$version.exe
+        asset_path: extracted/skylinehosting-Setup-${{ steps.setup-file.outputs.version }}
         asset_name: skylinehosting-Setup.exe
-        asset_content_type: application/octet-stream
