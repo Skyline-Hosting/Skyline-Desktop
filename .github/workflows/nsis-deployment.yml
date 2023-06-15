@@ -43,13 +43,22 @@ jobs:
 
     - run: Remove-Item -Path ./dist/win-unpacked/ -Recurse # This will make sure that Build Artifact doesn't take a lot of time to zip up the dist folder
 
+    - name: Find artifact
+      id: artifact
+      run: |
+        find dist/ -name "skylinehosting-Setup-v*.exe" -type f -printf "%f\n" > artifact.txt
+
+    - name: Read artifact file
+      id: read_artifact
+      run: |
+        echo "::set-output name=artifact_name::$(cat artifact.txt)"
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
         name: skylinehosting-Setup
-        path: dist/skylinehosting-Setup-v*.exe
-        if-no-files-found: error
+        path: dist/$(steps.read_artifact.outputs.artifact_name)
+        if-no-files-found: ignore
 
     - name: Extract version number
       run: |
