@@ -1,6 +1,6 @@
 {
   "name": "skylinehosting",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Skyline Hosting's Desktop App",
   "main": "src/js/electron/index.js",
   "scripts": {
