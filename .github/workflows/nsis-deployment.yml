@@ -17,15 +17,15 @@ jobs:
     steps:
     
     - uses: actions/checkout@v2
+    - name: Set up Visual Studio
+      uses: microsoft/setup-msbuild@v1
+      with:
+        vs-version: '2019'
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - name: Set up Visual Studio
-      uses: microsoft/setup-msbuild@v1
-      with:
-        vs-version: '2019'
     - run: npm run build
     - run: Remove-Item -path .\dist\win-unpacked\ -recurse  # This will make sure that Build Artifact doesn't take a butt load of time to zip up the dist folder I need
     - name: Upload a Build Artifact
