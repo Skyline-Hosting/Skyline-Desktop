@@ -48,19 +48,18 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: skylinehosting-Setup
-        path: dist/v*.exe
+        path: dist/skylinehosting-Setup-v*.exe
         if-no-files-found: error
-        publish: always
 
     - name: Extract version number
       run: |
-        filename=$(find dist/ -name "v*.exe" -print -quit)
-        regex="v(.*)\\.exe"
-        if [[ $filename =~ $regex ]]; then
-          version=${BASH_REMATCH[1]}
-          echo "Version number: $version"
+        $filename = Get-ChildItem -Path dist\ -Filter "skylinehosting-Setup-*.exe" | Select-Object -First 1 -ExpandProperty Name
+        $regex = "skylinehosting-Setup-(.*).exe"
+        if ($filename -match $regex) {
+          $version = $Matches[1]
+          Write-Host "Version number: $version"
           echo "::set-output name=version::$version"
-        fi
+        }
 
     - name: Create Release
       id: create_release
@@ -74,10 +73,11 @@ jobs:
     - name: Find artifact
       id: artifact
       run: |
-        echo "##[set-output name=artifact_name]$(find . -name 'v*.exe' -type f -printf '%f')"
+        $filename = Get-ChildItem -Path ./dist -Filter "v*.exe" -File | Select-Object -First 1 -ExpandProperty Name
+        Write-Host "Artifact file: $filename"
+        echo "::set-output name=artifact_name::$filename"
   
     - uses: ncipollo/release-action@v1.12.0
       with:
         artifacts: ${{ steps.artifact.outputs.artifact_name }}
         name: ${{ steps.tag.outputs.tag_name }}
-        tag: ${{ steps.tag.outputs.tag_name }}
