@@ -29,48 +29,14 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: npm run build
-    - run: Remove-Item -path .\dist\win-unpacked\ -recurse  # This will make sure that Build Artifact doesn't take a butt load of time to zip up the dist folder I need
 
-    - name: Set up file name and version
-      id: setup-file
-      run: |
-        echo "const { version } = require('./package.json'); console.log(version);" > getVersion.js
-        node getVersion.js > version.txt
-        echo "skylinehosting-Setup-$((Get-Content version.txt))" > filename.txt
-
-    - name: Zip dist folder
-      run: Compress-Archive -Path .\dist\ -DestinationPath skylinehosting-Setup.zip
-
-    - name: Extract setup exe from zip
-      run: Expand-Archive -Path skylinehosting-Setup.zip -DestinationPath extracted
-
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v2
+    - name: Build/release Electron app
+      uses: samuelmeuli/action-electron-builder@v1
       with:
-        name: skylinehosting-Setup
-        path: extracted/skylinehosting-Setup-${{ steps.setup-file.outputs.version }}.exe
+        # GitHub token, automatically provided to the action
+        # (No need to define this secret in the repo settings)
+        github_token: ${{ secrets.github_token }}
 
-    # Step 5: Create a release
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
-        draft: false
-        prerelease: false
-
-    # Step 6: Upload artifact to the release
-    - name: Upload Asset
-      id: upload_asset
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: extracted/skylinehosting-Setup-${{ steps.setup-file.outputs.version }}
-        asset_name: skylinehosting-Setup.exe
+        # If the commit is tagged with a version (e.g. "v1.0.0"),
+        # release the app after building
+        release: ${{ startsWith(github.ref, 'refs/tags/v') }}
