@@ -1,5 +1,7 @@
 name: Distribute to Windows (NSIS)
 
+contents: write
+
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -24,7 +26,6 @@ jobs:
       with:
         vs-version: '16.0' # Use the appropriate Visual Studio version, e.g., '16.0' for Visual Studio 2019
     
-
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
