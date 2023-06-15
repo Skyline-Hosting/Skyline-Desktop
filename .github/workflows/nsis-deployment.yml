@@ -43,17 +43,19 @@ jobs:
 
     - run: Remove-Item -Path ./dist/win-unpacked/ -Recurse # This will make sure that Build Artifact doesn't take a lot of time to zip up the dist folder
 
+
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
         name: skylinehosting-Setup
-        path: dist/skylinehosting-Setup-*.exe
+        path: dist/v*.exe
+        if-no-files-found: error
         publish: always
 
     - name: Extract version number
       run: |
-        filename=$(find dist/ -name "skylinehosting-Setup-*.exe" -print -quit)
-        regex="skylinehosting-Setup-(.*).exe"
+        filename=$(find dist/ -name "v*.exe" -print -quit)
+        regex="v(.*)\\.exe"
         if [[ $filename =~ $regex ]]; then
           version=${BASH_REMATCH[1]}
           echo "Version number: $version"
@@ -62,17 +64,17 @@ jobs:
 
     - name: Create Release
       id: create_release
-      uses: actions/create-release@v1
+      uses: ncipollo/release-action@v1.12.0
       with:
         name: ${{ steps.tag.outputs.tag_name }}
-        tag_name: ${{ steps.tag.outputs.tag_name }}
+        tag: ${{ steps.tag.outputs.tag_name }}
         draft: false
         token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Find artifact
       id: artifact
       run: |
-        echo "##[set-output name=artifact_name]$(find . -name 'skylinehosting-Setup-v*.exe' -type f -printf '%f')"
+        echo "##[set-output name=artifact_name]$(find . -name 'v*.exe' -type f -printf '%f')"
   
     - uses: ncipollo/release-action@v1.12.0
       with:
