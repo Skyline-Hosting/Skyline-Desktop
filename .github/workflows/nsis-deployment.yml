@@ -5,31 +5,36 @@ env:
 
 on:
   workflow_dispatch:
-    
+
 jobs:
   build-win:
-
     runs-on: windows-latest
 
     strategy:
       matrix:
         node-version: [14.x]
+
     steps:
     - uses: actions/checkout@v2
+
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v1.1
       with:
-        vsversion: '15.2'
-        vswhere-path: "C:\Program Files\Microsoft Visual Studio\2022\Enterprise"
-    
-    - run: npm config set msbuild_path "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe"
+        vsversion: '16.0' # Use the appropriate Visual Studio version, e.g., '16.0' for Visual Studio 2019
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+
+    - run: npm config set msbuild_path "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe"
+
     - run: npm install
+    
     - run: npm run build
-    - run: Remove-Item -path .\dist\win-unpacked\ -recurse  # This will make sure that Build Artifact doesn't take a butt load of time to zip up the dist folder I need
+
+    - run: Remove-Item -Path ./dist/win-unpacked/ -Recurse # This will make sure that Build Artifact doesn't take a lot of time to zip up the dist folder
+
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.3
       with:
