@@ -5,88 +5,70 @@ env:
 
 on:
   workflow_dispatch:
-  push:
-    tags:
-      - 'v*' # Push events to all tags
-
+    
 jobs:
   build-win:
+
     runs-on: windows-latest
 
     strategy:
       matrix:
-        node-version: [18.x]
-
+        node-version: [14.x]
     steps:
     - uses: actions/checkout@v2
-
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v1.1
       with:
         vs-version: '16.0' # Use the appropriate Visual Studio version, e.g., '16.0' for Visual Studio 2019
+    
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-
-    - name: Cache dependencies
-      uses: actions/cache@v2
-      with:
-        path: ~/.npm
-        key: npm-${{ hashFiles('package-lock.json') }}
-        restore-keys: npm-
-
     - run: npm install
-    
     - run: npm run build
+    - run: Remove-Item -path .\dist\win-unpacked\ -recurse  # This will make sure that Build Artifact doesn't take a butt load of time to zip up the dist folder I need
 
-    - run: Remove-Item -Path ./dist/win-unpacked/ -Recurse # This will make sure that Build Artifact doesn't take a lot of time to zip up the dist folder
-
-    - name: Find artifact
-      id: artifact
+    - name: Set up file name and version
+      id: setup-file
       run: |
-        find dist/ -name "skylinehosting-Setup-v*.exe" -type f -printf "%f\n" > artifact.txt
+        echo "const { version } = require('./package.json'); console.log(version);" > getVersion.js
+        node getVersion.js > version.txt
+        echo "skylinehosting-Setup-$((Get-Content version.txt))" > filename.txt
 
-    - name: Read artifact file
-      id: read_artifact
-      run: |
-        echo "::set-output name=artifact_name::$(cat artifact.txt)"
+    - name: Zip dist folder
+      run: Compress-Archive -Path .\dist\ -DestinationPath skylinehosting-Setup.zip
 
-    - name: Upload Artifact
+    - name: Extract setup exe from zip
+      run: Expand-Archive -Path skylinehosting-Setup.zip -DestinationPath extracted
+
+    - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2
       with:
         name: skylinehosting-Setup
-        path: dist/$(steps.read_artifact.outputs.artifact_name)
-        if-no-files-found: ignore
+        path: extracted/skylinehosting-Setup-$version.exe
 
-    - name: Extract version number
-      run: |
-        $filename = Get-ChildItem -Path dist\ -Filter "skylinehosting-Setup-*.exe" | Select-Object -First 1 -ExpandProperty Name
-        $regex = "skylinehosting-Setup-(.*).exe"
-        if ($filename -match $regex) {
-          $version = $Matches[1]
-          Write-Host "Version number: $version"
-          echo "::set-output name=version::$version"
-        }
-
+    # Step 5: Create a release
     - name: Create Release
       id: create_release
-      uses: ncipollo/release-action@v1.12.0
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: ${{ steps.tag.outputs.tag_name }}
-        tag: ${{ steps.tag.outputs.tag_name }}
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
         draft: false
-        token: ${{ secrets.GITHUB_TOKEN }}
+        prerelease: false
 
-    - name: Find artifact
-      id: artifact
-      run: |
-        $filename = Get-ChildItem -Path ./dist -Filter "v*.exe" -File | Select-Object -First 1 -ExpandProperty Name
-        Write-Host "Artifact file: $filename"
-        echo "::set-output name=artifact_name::$filename"
-  
-    - uses: ncipollo/release-action@v1.12.0
+    # Step 6: Upload artifact to the release
+    - name: Upload Asset
+      id: upload_asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        artifacts: ${{ steps.artifact.outputs.artifact_name }}
-        name: ${{ steps.tag.outputs.tag_name }}
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: extracted/skylinehosting-Setup-$version.exe
+        asset_name: skylinehosting-Setup.exe
+        asset_content_type: application/octet-stream
