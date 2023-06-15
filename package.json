@@ -1,6 +1,6 @@
 {
   "name": "skylinehosting",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Skyline Hosting's Desktop App",
   "main": "src/js/electron/index.js",
   "scripts": {
@@ -36,7 +36,6 @@
         "owner": "Skyline-Hosting",
         "repo": "Skyline-Desktop",
         "releaseType": "release",
-        "publish": "always",
         "private": true
       }
     ],
