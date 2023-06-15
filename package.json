@@ -58,7 +58,7 @@
       "shortcutName": "Skyline Hosting",
       "displayLanguageSelector": true,
       "oneClick": false,
-      "allowElevation": false,
+      "allowElevation": true,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true
     }
