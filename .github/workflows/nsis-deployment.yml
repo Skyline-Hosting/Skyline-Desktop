@@ -62,10 +62,10 @@ jobs:
 
     - name: Create Release
       id: create_release
-      uses: ncipollo/release-action@v1.12.0
+      uses: actions/create-release@v1
       with:
         name: ${{ steps.tag.outputs.tag_name }}
-        tag: ${{ steps.tag.outputs.tag_name }}
+        tag_name: ${{ steps.tag.outputs.tag_name }}
         draft: false
         token: ${{ secrets.GITHUB_TOKEN }}
 
