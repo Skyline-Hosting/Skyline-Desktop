@@ -15,13 +15,12 @@ jobs:
       matrix:
         node-version: [14.x]
     steps:
-    
+    - uses: actions/checkout@v2
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v1.1
       with:
         vsversion: '15.2'
         vswhere-path: "C:\Program Files\Microsoft Visual Studio\2022\Enterprise"
-    - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
