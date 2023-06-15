@@ -74,7 +74,7 @@ jobs:
       run: |
         echo "##[set-output name=artifact_name]$(find . -name 'skylinehosting-Setup-v*.exe' -type f -printf '%f')"
   
-    - uses: ncipollo/release-action@v1
+    - uses: ncipollo/release-action@v1.12.0
       with:
         artifacts: ${{ steps.artifact.outputs.artifact_name }}
         name: ${{ steps.tag.outputs.tag_name }}
