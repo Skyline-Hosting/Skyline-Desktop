@@ -1,3 +1,3 @@
 var url = window.location.href;
-if(url == "https://dashboard.skylinehosting.org/profile" || url == "https://dashboard.skylinehosting.org/login" ||  url == "https://dashboard.skylinehosting.org/auth/redirect" || url == "https://discord.com/oauth2/authorize?client_id=978505456567873546&redirect_uri=https%3A%2F%2Fdashboard.skylinehosting.org%2Fauth%2Fcallback&scope=identify+email+guilds.join&response_type=code&state=OslOPeDpuYiCQ2pe1kp47UzCL2FJ7m2FOPA8fkIJ")
-{} else {setTimeout(() => {location.href = 'https://dashboard.skylinehosting.org/profile'}, 500);}
+if(url == "https://www.skylinehosting.org/blesta/client/" || url == "https://www.skylinehosting.org/blesta/order/signup/index/signup")
+{} else {setTimeout(() => {location.href = 'https://www.skylinehosting.org/blesta/client/'}, 500);}

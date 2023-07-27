@@ -1,3 +1,4 @@
 document.querySelector('#home').onclick = function() {
-    navigateTo('https://panel.skylinehosting.org/');
+    navigateTo('https://skylinehosting.org/blesta');
+    location.href = 'https://skylinehosting.org/blesta';
 };

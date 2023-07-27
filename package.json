@@ -1,6 +1,6 @@
 {
   "name": "skylinehosting",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "Skyline Hosting's Desktop App",
   "main": "src/js/electron/index.js",
   "scripts": {
@@ -51,7 +51,7 @@
       "maintainer": "package.skylinehosting.desktopapp",
       "category": "Network",
       "vendor": "Skyline Hosting",
-      "description": "Accessing Skyline, all from one place"
+      "description": "Accessing Skyline Hosting, all from one place"
     },
     "nsis": {
       "deleteAppDataOnUninstall": true,
@@ -59,7 +59,7 @@
       "displayLanguageSelector": true,
       "oneClick": false,
       "allowElevation": true,
-      "allowToChangeInstallationDirectory": true,
+      "allowToChangeInstallationDirectory": false,
       "createDesktopShortcut": true
     }
   }
