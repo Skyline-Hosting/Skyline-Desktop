@@ -17,7 +17,7 @@ function webviewHC(){webviewHC.openDevTools()}
 function CP_wvGoBack(){webviewCP.goBack()}
 function CP_wvGoForward(){webviewCP.goForward()}
 function CP_mvBlank(){webviewCP.loadURL('https://skylinehosting.org')}
-function mvClientPanel(){webviewCP.loadURL('https://dashboard.skylinehosting.org/')}
+function mvClientPanel(){webviewCP.loadURL('https://www.skylinehosting.org/blesta')}
 
 function phpma_wvGoBack(){webviewPHP.goBack()}
 function phpma_wvGoForward(){webviewPHP.goForward()}
